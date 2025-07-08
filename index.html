@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>REISTI株式会社</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* 載入日文字體 */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    /* 導覽列滑動縮小效果 */
+    header {
+      transition: background-color 0.3s ease, padding 0.3s ease;
+    }
+    header.shrink {
+      background-color: rgba(18, 18, 18, 0.95);
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 w-full z-50 bg-transparent p-6">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-5">
+        <img src="images/logo.jpg" alt="REISTIロゴ" class="h-12 w-auto" />
+        <h1 class="text-2xl font-extrabold tracking-wide text-orange-400">REISTI株式会社</h1>
+      </div>
+      <nav class="space-x-8 text-lg font-medium uppercase text-orange-300">
+        <a href="index.html" class="hover:text-orange-500 transition">ホーム</a>
+        <a href="about.html" class="hover:text-orange-500 transition">会社情報</a>
+        <a href="products.html" class="hover:text-orange-500 transition">製品紹介</a>
+        <a href="contact.html" class="hover:text-orange-500 transition">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 flex items-center justify-center px-8">
+    <div class="max-w-4xl text-center">
+      <h2 class="text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg text-orange-400" style="text-shadow: 0 0 12px #ff6f3c;">
+        REISTI — 最強のSDSプラスドリルビット
+      </h2>
+      <p class="text-xl max-w-3xl mx-auto text-gray-300 mb-12 leading-relaxed drop-shadow-md">
+        台湾の自社工場で製造された最高品質のドリルビット。25年以上の歴史を持ち、日本のプロに選ばれています。
+      </p>
+      <a href="products.html" class="inline-block bg-gradient-to-r from-orange-500 to-yellow-400 text-black font-bold px-10 py-4 rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-transform">
+        製品を見る
+      </a>
+    </div>
+  </section>
+
+  <!-- About Preview Section -->
+  <section class="max-w-5xl mx-auto py-20 px-6 text-gray-300">
+    <h3 class="text-4xl font-bold mb-6 text-center text-orange-400 tracking-wide">REISTIの強み</h3>
+    <div class="grid md:grid-cols-3 gap-12">
+      <div class="bg-gray-900 bg-opacity-70 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow">
+        <h4 class="text-2xl font-semibold mb-3 text-yellow-400">品質へのこだわり</h4>
+        <p>高耐久の合金刃先を使用し、プロの現場で長時間使える耐久性を実現。</p>
+      </div>
+      <div class="bg-gray-900 bg-opacity-70 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow">
+        <h4 class="text-2xl font-semibold mb-3 text-yellow-400">日本市場に最適化</h4>
+        <p>OEM対応も充実。日本の規格・ニーズに合わせてカスタマイズ可能です。</p>
+      </div>
+      <div class="bg-gray-900 bg-opacity-70 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow">
+        <h4 class="text-2xl font-semibold mb-3 text-yellow-400">豊富な実績</h4>
+        <p>25年以上の製造経験と多数の導入実績が信頼の証です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-8">
+    <p>&copy; 2025 REISTI株式会社 - All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Header 滑動縮小效果
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if(window.scrollY > 50) {
+        header.classList.add('shrink');
+      } else {
+        header.classList.remove('shrink');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>製品紹介 - REISTI株式会社</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    header {
+      transition: background-color 0.3s ease, padding 0.3s ease;
+    }
+    header.shrink {
+      background-color: rgba(18, 18, 18, 0.95);
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 w-full z-50 bg-transparent p-6">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-5">
+        <img src="images/logo.jpg" alt="REISTIロゴ" class="h-12 w-auto" />
+        <h1 class="text-2xl font-extrabold tracking-wide text-orange-400">REISTI株式会社</h1>
+      </div>
+      <nav class="space-x-8 text-lg font-medium uppercase text-orange-300">
+        <a href="index.html" class="hover:text-orange-500 transition">ホーム</a>
+        <a href="about.html" class="hover:text-orange-500 transition">会社情報</a>
+        <a href="products.html" class="hover:text-orange-500 transition">製品紹介</a>
+        <a href="contact.html" class="hover:text-orange-500 transition">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-28 relative max-w-6xl mx-auto px-6 mb-12">
+    <h2 class="text-4xl font-extrabold text-orange-400 mb-8 border-b-4 border-yellow-400 pb-2 max-w-max">
+      製品紹介
+    </h2>
+
+    <!-- Carousel -->
+    <div class="relative max-w-4xl mx-auto rounded-lg shadow-lg overflow-hidden mb-14">
+      <img id="carousel" src="images/product1.jpeg" alt="製品画像" class="w-full object-cover" />
+    </div>
+
+    <!-- Products Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="bg-gray-900 bg-opacity-80 rounded-xl p-4 shadow-lg hover:shadow-2xl transition-shadow cursor-pointer">
+        <img src="images/product1.jpeg" alt="SDS Plus ドリルビット 10.5mm" class="rounded-lg mb-3" />
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">SDS Plus ドリルビット 10.5mm</h3>
+        <p class="text-gray-300 text-sm">超耐磨合金頭で長時間使用に最適。</p>
+      </div>
+      <div class="bg-gray-900 bg-opacity-80 rounded-xl p-4 shadow-lg hover:shadow-2xl transition-shadow cursor-pointer">
+        <img src="images/product2.jpeg" alt="SDS Plus ドリルビット 12mm" class="rounded-lg mb-3" />
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">SDS Plus ドリルビット 12mm</h3>
+        <p class="text-gray-300 text-sm">耐久性に優れ、多様な現場で活躍。</p>
+      </div>
+      <div class="bg-gray-900 bg-opacity-80 rounded-xl p-4 shadow-lg hover:shadow-2xl transition-shadow cursor-pointer">
+        <img src="images/product3.jpeg" alt="SDS Plus ドリルビット 14mm" class="rounded-lg mb-3" />
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">SDS Plus ドリルビット 14mm</h3>
+        <p class="text-gray-300 text-sm">高精度設計で優れたパフォーマンス。</p>
+      </div>
+      <div class="bg-gray-900 bg-opacity-80 rounded-xl p-4 shadow-lg hover:shadow-2xl transition-shadow cursor-pointer">
+        <img src="images/product4.jpeg" alt="SDS Plus ドリルビット 16mm" class="rounded-lg mb-3" />
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">SDS Plus ドリルビット 16mm</h3>
+        <p class="text-gray-300 text-sm">強力な穴あけ性能と耐久性を両立。</p>
+      </div>
+      <div class="bg-gray-900 bg-opacity-80 rounded-xl p-4 shadow-lg hover:shadow-2xl transition-shadow cursor-pointer">
+        <img src="images/product5.jpeg" alt="SDS Plus ドリルビット 18mm" class="rounded-lg mb-3" />
+        <h3 class="text-xl font-semibold text-yellow-400 mb-1">SDS Plus ドリルビット 18mm</h3>
+        <p class="text-gray-300 text-sm">幅広い用途に対応した高性能モデル。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-8 mt-20">
+    <p>&copy; 2025 REISTI株式会社 - All rights reserved.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if(window.scrollY > 50) {
+        header.classList.add('shrink');
+      } else {
+        header.classList.remove('shrink');
+      }
+    });
+
+    const images = [
+      "images/product1.jpeg",
+      "images/product2.jpeg",
+      "images/product3.jpeg",
+      "images/product4.jpeg",
+      "images/product5.jpeg"
+    ];
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      document.getElementById("carousel").src = images[index];
+    }, 3500);
+  </script>
+
+</body>
+</html>
+
